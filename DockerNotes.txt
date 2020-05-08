@@ -1,0 +1,65 @@
+DOCKER NOTES:
+
+#Installation of docker on UBuntu
+https://phoenixnap.com/kb/how-to-install-docker-on-ubuntu-18-04
+
+I already started the docker engine/service as part of the installation
+
+# Know the version of the DOCKER
+docker --version
+
+#information
+sudo docker info
+
+
+# list images
+
+sudo docker  images
+
+# list all process running 
+
+sudo docker ps -all
+
+# to run a image 
+
+sudo docker run hello-world
+
+
+#####################################
+
+##BASIC
+docker version
+docker -v
+docker info
+docker --help
+docker login
+
+##IMAGES
+docker images
+docker pull
+docker rmi
+
+##CONTAINERS
+docker ps
+docker run
+docker start
+docker stop
+##SYSTEM
+docker stats
+docker system df
+
+to make the long string to short in terminal
+######export PS1="\u$"
+
+
+docker pull ubunut
+
+
+keggle:
+
+sudo docker run -d -p 8080:8080 --rm -it kaggle/python-build /bin/bash
+
+# -d is to run it backgroud
+
+sudo docker exec -it f826b511ce5d /bin/bash
+
