@@ -57,7 +57,7 @@ docker pull ubunut
 
 keggle:
 
-sudo docker run -d -p 8080:8080 --rm -it kaggle/python-build /bin/bash
+sudo docker run -d -p 8080:8080 -it kaggle/python-build /bin/bash
 
 # -d is to run it backgroud
 
