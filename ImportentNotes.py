@@ -19,3 +19,4 @@
     +++++++++++
     matplotlib:
     https://www.kaggle.com/saurav9786/matplot-tutorial-for-everyone
+    https://github.com/rougier/matplotlib-tutorial
