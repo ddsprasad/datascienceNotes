@@ -82,3 +82,13 @@ for i in resutls:
 #this enables mutiple prints on the notebook console
 from IPython.core.interactiveshell import InteractiveShell
 InteractiveShell.ast_node_interactivity = "all"
+
+####################################get categorical values 
+def get_categorical_values(dataframe):
+    df = dataframe
+    cat_col = df.select_dtypes(include='object').columns
+    for i in cat_col:
+        print(i, '\n')
+        print(df[i].value_counts())
+        print("=="*15)
+    return "**"*15
