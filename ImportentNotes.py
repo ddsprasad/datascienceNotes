@@ -20,3 +20,6 @@
     matplotlib:
     https://www.kaggle.com/saurav9786/matplot-tutorial-for-everyone
     https://github.com/rougier/matplotlib-tutorial
+
+	Formuals at once place:
+    https://www.educba.com/adjusted-r-squared-formula/
