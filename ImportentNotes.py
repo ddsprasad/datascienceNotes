@@ -23,3 +23,19 @@
 
 	Formuals at once place:
     https://www.educba.com/adjusted-r-squared-formula/
+
+
+some datasets for supervised learning:
+
+https://www.kaggle.com/c/how-much-did-it-rain-ii/overview
+https://www.kaggle.com/c/grupo-bimbo-inventory-demand
+https://www.kaggle.com/c/liberty-mutual-group-property-inspection-prediction
+
+https://www.kaggle.com/c/restaurant-revenue-prediction/data
+https://www.kaggle.com/c/tmdb-box-office-prediction/overview
+https://www.kaggle.com/c/amazon-employee-access-challenge/overview
+https://www.kaggle.com/c/titanic
+https://www.kaggle.com/c/sf-crime
+https://www.kaggle.com/c/santander-customer-satisfaction
+https://www.kaggle.com/c/walmart-recruiting-trip-type-classification
+https://www.kaggle.com/c/whats-cooking
