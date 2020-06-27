@@ -1,0 +1,16 @@
+
+
+sudo docker pull mysql
+
+sudo docker run --name mysql5 -e MYSQL_ROOT_PASSWORD=Apple@99 -d mysql:5.6
+
+sudo docker run -it --network some-network --rm mysql mysql -h some-mysql -u root -p
+
+sudo docker exec -it 50684cc3717e mysql -uroot -p
+
+docker inspect -f '{{ .NetworkSettings.IPAddress }}' mysql5
+
+where some-mysql is the name you want to assign to your container, my-secret-pw is the password to be set for the MySQL root user and tag is the tag specifying the MySQL version you want. See the list above for relevant tags.
+
+
+https://github.com/shlomi-noach/common_schema

@@ -52,20 +52,34 @@ to make the long string to short in terminal
 ######export PS1="\u$"
 
 
-docker pull ubunut
 
+https://github.com/Kaggle/docker-python
 
 keggle:
 
-sudo docker run -d -p 8080:8080 -it kaggle/python-build /bin/bash
+sudo docker run -d -p 8081:8080 -it kaggle/python-build /bin/bash
 
 # -d is to run it backgroud
 
 sudo docker exec -it f826b511ce5d /bin/bash
 
 Sandeep:
-sudo docker run -d -p 8080:8080 kaggle/python-build
+sudo docker run -d -p 8081:8080 kaggle/python-build
 sudo docker exec -it <container name> /bin/bash
 
 
 https://github.com/ddsprasad/datascienceNotes.git
+
+
+
+
+
+keggle/python
+
+sudo docker run -v $PWD:/tmp/working -w=/tmp/working -p 8888:8888 --rm -it kaggle/python
+
+sudo docker run -v $PWD:/tmp/working -w=/tmp/working -p 9999:8888 kaggle/python
+jupyter notebook --no-browser --ip="*" --notebook-dir=/tmp/working
+
+
+https://github.com/stefan-bergstein/Utilizing-the-Kaggle-Python-Docker-Container-image

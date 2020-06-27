@@ -1,0 +1,16 @@
+
+
+docker pull jupyter/pyspark-notebook
+sudo docker run -d -p 8888:8888 -p 4040:4040 -p 4041:4041 jupyter/pyspark-notebook
+
+
+
+ref:
+
+https://jupyter-docker-stacks.readthedocs.io/en/latest/using/specifics.html#apache-sparkasx
+
+
+
+sudo docker pull jupyter/all-spark-notebook
+
+sudo docker run -d -p 8888:8888 -p 4040:4040 -p 4041:4041 jupyter/all-spark-notebook

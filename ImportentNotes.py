@@ -1,4 +1,4 @@
-
+https://medium.com/kaggle-blog/triple-gm-abhishek-thakur-answers-qs-from-the-kaggle-community-c45757621bd5
     
     ==========================
     https://data-flair.training/blogs/python-chatbot-project/
@@ -39,3 +39,9 @@ https://www.kaggle.com/c/sf-crime
 https://www.kaggle.com/c/santander-customer-satisfaction
 https://www.kaggle.com/c/walmart-recruiting-trip-type-classification
 https://www.kaggle.com/c/whats-cooking
+
+
+https://github.com/datameet
+https://github.com/awesomedata/awesome-public-datasets
+https://data.gov.in/
+https://archive.ics.uci.edu/ml/index.php

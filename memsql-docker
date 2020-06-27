@@ -1,0 +1,86 @@
+	export LICENSE_KEY=BDc5MWNmNGRhZTEwYzRmOTRhNzFhMGRlOTQzMTY4YjdhAAAAAAAAAAAEAAAAAAAAAAwwNQIZAORmgRFdQPpGcxhu1QSAWCZ+ihd5D/SS3wIYH0nDHCDqe+RRsAeQJTE7LMwcgKafDRvqAA==
+	
+	
+	sudo docker run -i --init \
+    --name memsql-docker \
+    -e LICENSE_KEY=$LICENSE_KEY \
+    -p 3307:3306 -p 8082:8080 \
+    memsql/cluster-in-a-box
+	
+		
+	
+	To start the cluster:
+    docker start (CONTAINER_NAME)
+
+To stop the cluster (must be started):
+    docker stop (CONTAINER_NAME)
+
+To remove the cluster (all data will be deleted):
+    docker rm (CONTAINER_NAME)
+
+
+# Pull the image
+docker pull memsql/cluster-in-a-box
+
+
+# Spin up a MemSQL cluster on your machine
+docker run -i --init \
+    --name memsql-ciab \
+    -e LICENSE_KEY=[INPUT_YOUR_LICENSE_KEY] \
+    -p 3306:3306 -p 8080:8080 \
+    memsql/cluster-in-a-box
+
+# If you don't have a License key you can obtain one by 
+# registering on the MemSQL Customer Portal: https://portal.memsql.com/
+
+
+# Start the container
+docker start memsql-ciab
+
+
+# Connect to MemSQL Studio at http://localhost:8080
+# The default Username is root and Password should be left blank.
+
+
+# Connect to the container and open the MemSQL client application
+docker exec -it memsql-ciab memsql
+
+
+# You can also connect to MemSQL with a third-party tools like Sequel Pro or the MySQL client
+mysql -h 127.0.0.1 -u root -P 3307 --prompt="memsql> "
+
+
+# Stop and remove the container
+docker stop memsql-ciab && docker rm memsql-ciab
+
+
+===================================
+
+sudo docker run --name kafka memsql/kafka
+
+
+sudo docker exec -it kafka /bin/bash
+
+cd /opt/kafka*/bin
+
+./kafka-topics.sh --topic test --zookeeper 127.1:2181 --create --partitions 8 --replication-factor 1
+
+./kafka-console-producer.sh --topic test --broker-list 127.0.0.1:9092
+
+to know in which ip kafka running
+
+docker inspect -f '{{ .NetworkSettings.IPAddress }}' kafka
+172.17.0.3
+
+
+CREATE PIPELINE `quickstart_kafka` AS LOAD DATA KAFKA '172.17.0.3/test' INTO TABLE `messages`;
+
+CREATE PIPELINE `quickstart_kafka` AS LOAD DATA KAFKA '172.17.0.3/test' INTO TABLE `messages`;
+
+TEST PIPELINE quickstart_kafka LIMIT 1;
+
+START PIPELINE quickstart_kafka;
+
+SELECT * FROM messages;
+
+STOP PIPELINE quickstart_kafka;
