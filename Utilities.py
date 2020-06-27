@@ -42,7 +42,7 @@ def value_to_float(x):
         return float(re.sub('[€B]', '', x,flags=re.UNICODE)) * 1000000000
     return 0.0
 
-##########################################To create a connection for MYSQL
+#To create a connection for MYSQL
 
 import mysql.connector
 
@@ -76,19 +76,27 @@ resutls = cusr.fetchall()
 for i in resutls:
     print("-----------\n")
     print(i[2])
-    
-##################################Quick Notes
 
 #this enables mutiple prints on the notebook console
 from IPython.core.interactiveshell import InteractiveShell
 InteractiveShell.ast_node_interactivity = "all"
 
-####################################get categorical values 
-def get_categorical_values(dataframe):
+#get categorical value counts
+def get_categorical_value_counts(dataframe):
     df = dataframe
     cat_col = df.select_dtypes(include='object').columns
     for i in cat_col:
-        print(i, '\n')
+        print(i,' : UniqueCount ',df[i].nunique(), '\n')
         print(df[i].value_counts())
-        print("=="*15)
+        print("==="*15)
     return "**"*15
+
+#get unique values of dataframe
+def get_unique_values(dataframe):
+    df = dataframe
+    for i in df.columns:
+        if df[i].isnull().sum() == 0:
+            print('feature: ',i,'\n')
+            print(sorted(df[i].unique()))
+            print('=='*30)
+    return "**"*30
