@@ -24,7 +24,7 @@ sudo docker ps -all
 
 sudo docker run hello-world
 
-
+sudo docker cp sales_records.csv memsql:/home/memsql/sales_records.csv
 #####################################
 
 ##BASIC

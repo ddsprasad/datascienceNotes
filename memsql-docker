@@ -1,19 +1,22 @@
 	export LICENSE_KEY=BDc5MWNmNGRhZTEwYzRmOTRhNzFhMGRlOTQzMTY4YjdhAAAAAAAAAAAEAAAAAAAAAAwwNQIZAORmgRFdQPpGcxhu1QSAWCZ+ihd5D/SS3wIYH0nDHCDqe+RRsAeQJTE7LMwcgKafDRvqAA==
 	
+sudo docker volume create memsql_data
+
+sudo docker run -i --init \
+--name memsql \
+-e LICENSE_KEY=$LICENSE_KEY \
+-p 3306:3306 -p 8080:8080 \
+memsql/cluster-in-a-box:latest \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v memsql_data:/usr/lib/memsql`		
 	
-	sudo docker run -i --init \
-    --name memsql-docker \
-    -e LICENSE_KEY=$LICENSE_KEY \
-    -p 3307:3306 -p 8082:8080 \
-    memsql/cluster-in-a-box
-	
-		
+
 	
 	To start the cluster:
     docker start (CONTAINER_NAME)
 
-To stop the cluster (must be started):
-    docker stop (CONTAINER_NAME)
+To stop the cluster (must be started):	
+    docker stop (CONTAINER_NAME)	
 
 To remove the cluster (all data will be deleted):
     docker rm (CONTAINER_NAME)
@@ -84,3 +87,16 @@ START PIPELINE quickstart_kafka;
 SELECT * FROM messages;
 
 STOP PIPELINE quickstart_kafka;
+
+--------------------------- LOAD VIA PIPELINE
+CREATE PIPELINE load_books
+AS LOAD DATA FS '/home/memsql/books.csv'
+INTO TABLE `classic_books`
+FIELDS TERMINATED BY ',';
+
+
+SELECT * FROM information_schema.PIPELINES_FILES;
+
+START PIPELINE load_books FOREGROUND;
+
+select * from  classic_books;
